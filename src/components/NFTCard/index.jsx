@@ -85,11 +85,11 @@ const NFTCard = ({ metadata, mintPrice, tokenId, nextTokenId, mintNFT }) => {
           disabled={!canMint}
           onClick={mintNFT}
           className={`w-full py-2 rounded-lg font-bold transition-all duration-300 mt-2 flex items-center justify-center space-x-2 ${
-            !   
-              ? isOwned
-                ? "bg-green-900/20 text-green-500 cursor-not-allowed"
-                : "bg-gray-800 text-gray-500 cursor-not-allowed"
-              : "bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white"
+            canMint
+              ? "bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white"
+              : isOwned
+              ? "bg-green-900/20 text-green-500 cursor-not-allowed"
+              : "bg-gray-800 text-gray-500 cursor-not-allowed"
           }`}
         >
           {isOwned ? (
